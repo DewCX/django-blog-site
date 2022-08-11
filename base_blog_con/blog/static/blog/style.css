@@ -1,0 +1,22 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: #36486b;
+}
+
+a {
+    color: #36486b;
+    cursor: pointer;
+}
+
+.navbar,
+.top{
+    background-color: #d5f4e6 !important;
+}
