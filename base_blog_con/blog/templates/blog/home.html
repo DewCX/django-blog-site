@@ -6,42 +6,48 @@
     <!-- Content -->
     <div class="row">
         <!-- Card -->
+        
             <div class="col-8">
-                <div class="row">
+              <div class="row">
+                {% for post in posts  %}
                 <div class="col-3">
-                    <img src="cemmandraci.jpeg" alt="" class="img-fluid rounded-circle p-2 rounded mx-auto d-block">
+                  <img src="cemmandraci.jpeg" alt="" class="img-fluid rounded-circle p-2 rounded mx-auto d-block">
                 </div>
                 <div class="col-9">
-                    <div class="up d-flex align-items-center">
-                        <h6 class="text-center fs-2 py-2">Cemandraci</h6>
-                        <span class="text-muted ms-5">August 27,2022</span>
-                    </div>
-                    <p class="border-bottom"></p>
-                    <div class="bottom">
-                        <a href="" class="text-decoration-none"><h2>Blog ismi</h2></a>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, eos!</p>
-                    </div>
+                  <div class="up d-flex align-items-center">
+                      <h6 class="text-center fs-2 py-2">{{ post.author }}</h6>
+                      <span class="text-muted ms-5">{{ post.date_posted }}</span>
+                  </div>
+                  <p class="border-bottom"></p>
+                  <div class="bottom">
+                      <a href="" class="text-decoration-none"><h2>{{ post.title }}</h2></a>
+                      <p>{{ post.content }}</p>
+                  </div>
                 </div>
-                </div>
+                {% endfor %}
+              </div>
+              
             </div>
+            
         <!-- Card End -->
             <div class="col-4 position-sticky">
-                <div class="card">
+              <div class="card">
                 <div class="card-header">
-                    Categories
+                  Categories
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Back-End Blogs</li>
-                    <li class="list-group-item">Front-End Blogs</li>
-                    <li class="list-group-item">Mobile Development Blogs</li>
+                  <li class="list-group-item">Back-End Blogs</li>
+                  <li class="list-group-item">Front-End Blogs</li>
+                  <li class="list-group-item">Mobile Development Blogs</li>
                 </ul>
-                </div>
+              </div>
             </div>
 
-            </div>   
+         </div>   
         
     </div>
     <!-- row end -->
+</div>
 </div>
 <div class="b-example-divider"></div>
 
