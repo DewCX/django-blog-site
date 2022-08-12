@@ -6,11 +6,12 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Blog</a>
+          <a class="navbar-brand" href="{% url 'blog-home' %}">Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse d-flex" id="navbarNav">
+            {% if user.is_authenticated %}
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'blog-home' %}">Home</a>
@@ -20,14 +21,19 @@
               </li>
             </ul>
             <div class="d-flex align-items-center justify-content-center">
-                <a class="mx-2 text-decoration-none">Login
+                <a class="mx-2 text-decoration-none" href="{% url 'logout' %}">Logout
+                </a>
+            {% else %}
+                <div class="ms-auto">
+                <a class="mx-2 text-decoration-none" href="{% url 'login' %}">Login
                 </a>
                 <span class="fs-4">|</span>    
-                <a class="mx-2 text-decoration-none">
+                <a class="mx-2 text-decoration-none" href="{% url 'register' %}">
                     Register
                 </a>
-  
-            </div>
+              </div>
+
+            {% endif %}
           </div>
         </div>
         </nav>
