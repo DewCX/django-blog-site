@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from . forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
@@ -21,3 +22,7 @@ def register(request):
     }
 
     return render(request, "account/register.html",context)
+
+@login_required
+def profile(request):
+    return render(request, 'account/profile.html')

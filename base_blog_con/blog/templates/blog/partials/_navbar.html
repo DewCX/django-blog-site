@@ -21,6 +21,7 @@
               </li>
             </ul>
             <div class="d-flex align-items-center justify-content-center">
+                <h6>{{request.user}}</h6>
                 <a class="mx-2 text-decoration-none" href="{% url 'logout' %}">Logout
                 </a>
             {% else %}
