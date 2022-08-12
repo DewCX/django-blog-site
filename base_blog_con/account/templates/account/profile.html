@@ -1,1 +1,40 @@
-<h1>xx</h1>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card text-center mt-5">
+        <div class="img text-center my-2">
+            <img src="{{ user.profile.image.url }}" class="card-img-top img-fluid rounded-circle" style="height: 200px; width:200px;">
+        </div>
+        <div class="card-body">
+          <h1>{{ user.username|title }}</h1>
+          <p>{{ user.email }}</p>
+        </div>
+        <div>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="">
+                        <i class="fa-brands fa-facebook-f fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mx-3">
+                    <a href="">
+                        <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="">
+                        <i class="fa-brands fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+            <hr class="w-50 m-auto">
+            <div class="update">
+                <a  class="btn btn-outline-success w-50 my-3" href="">UPDATE PROFİLE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
