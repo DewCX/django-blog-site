@@ -41,11 +41,12 @@
                     <fieldset class="form-group">
                         {{ u_form|crispy }}
                         {{ p_form|crispy }}
-                    </fieldset>
-                    <hr class="w-50 m-auto">   
+                    </fieldset>   
 
                     <div class="update">
-                        <button class="btn btn-outline-success w-50 my-3" type="submit">Update Profile</button>
+                        <button class="btn btn-outline-success w-50 my-3" type="submit">
+                            <a href="{% url 'profile-update' %}">Update Profile</a>
+                        </button>
                     </div>
                 </form>
 

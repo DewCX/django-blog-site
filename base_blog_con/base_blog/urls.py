@@ -13,6 +13,7 @@ urlpatterns = [
     #User authentication
     path('register/', account_views.register, name='register'),
     path('profile/', account_views.profile, name='profile'),
+    path('profile/profile_update/', account_views.profile_update, name='profile-update'),
     path('login/', auth_views.LoginView.as_view(template_name='account/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='account/logout.html'), name='logout'),
 ]

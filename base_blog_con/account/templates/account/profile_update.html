@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Update Profile</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-success" type="submit">Update</button>
+            <button class="btn btn-outline-success" type="submit">
+                <a href="{% url 'profile' %}">Go Back</a>
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
