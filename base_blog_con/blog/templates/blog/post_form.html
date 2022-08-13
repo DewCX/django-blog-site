@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom my-4 text-center">+ Create Post</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group text-center">
+            <button class="btn btn-outline-success w-100" type="submit">Post</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            If you don't want to -->
+            <a href="{% url 'blog-home' %}">Go back</a>
+        </small>
+    </div>
+</div>
+
+{% endblock content %}
