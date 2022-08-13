@@ -5,6 +5,7 @@ from .models import Post
 #Working with class based views
 from django.views.generic import ListView, DetailView, CreateView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # def BlogHome(request):
@@ -22,18 +23,18 @@ def BlogAbout(request):
 #Class Based Views
 
 #Listing our post with ListView
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = "blog/home.html"
     context_object_name = "posts"
     ordering = ["-date_posted"]
 
 # DetailView
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 #CreateView
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
 
