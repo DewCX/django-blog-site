@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Post
 
 #Working with class based views
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
@@ -34,7 +34,17 @@ class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 #CreateView
-class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+#Update View
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
 
@@ -49,14 +59,10 @@ class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         else:
             return False
 
-#Update View
-class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+#Delete View
+class PostDeleteView(DeleteView):
     model = Post
-    fields = ['title', 'content']
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+    success_url = "/"
 
     def test_func(self):
         post = self.get_object()

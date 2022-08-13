@@ -28,14 +28,16 @@
 
 {% include "blog/partials/_navbar.html" %}
 
-<div class="col-8"> 
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert-{{message.tags}}">
-          {{message}}
-        </div>
-      {% endfor %}
-    {% endif %}
+<div class="container">
+  <div class="col-12"> 
+      {% if messages %}
+        {% for message in messages %}
+            <div class="alert-{{message.tags}} bg-success my-3">
+              {{message}}
+            </div>
+        {% endfor %}
+      {% endif %}
+  </div>
 </div>
 
     

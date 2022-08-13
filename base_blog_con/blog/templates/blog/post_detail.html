@@ -22,6 +22,12 @@
                       <a href="#" class="text-decoration-none"><h2>{{ object.title }}</h2></a>
                       <p>{{ object.content }}</p>
                   </div>
+                  <div class="d-flex">
+                    {% if object.author == user %}
+                        <a class="btn btn-outline-success w-50" href="{% url 'blog-update' object.id %}">Update</a>
+                        <a class="btn btn-outline-danger w-50" href="{% url 'blog-delete' object.id %}">Delete</a>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
               
