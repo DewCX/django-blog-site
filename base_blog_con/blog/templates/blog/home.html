@@ -10,10 +10,10 @@
             <div class="col-8">
               <div class="row">
                 {% for post in posts  %}
-                <div class="col-3">
-                  <img src="cemmandraci.jpeg" alt="" class="img-fluid rounded-circle p-2 rounded mx-auto d-block">
+                <div class="col-3 mb-5">
+                  <img src="{{ post.author.profile.image.url }}" alt="" class="img-fluid rounded-circle p-2 rounded mx-auto d-block">
                 </div>
-                <div class="col-9">
+                <div class="col-9 mb-5">
                   <div class="up d-flex align-items-center">
                       <h6 class="text-center fs-2 py-2">{{ post.author }}</h6>
                       <span class="text-muted ms-5">{{ post.date_posted }}</span>
