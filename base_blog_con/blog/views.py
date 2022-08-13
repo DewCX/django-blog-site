@@ -3,7 +3,8 @@ from django.shortcuts import render
 from .models import Post
 
 #Working with class based views
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+
 
 
 # def BlogHome(request):
@@ -20,8 +21,13 @@ def BlogAbout(request):
 
 #Class Based Views
 
+#Listing our post with ListView
 class PostListView(ListView):
     model = Post
     template_name = "blog/home.html"
     context_object_name = "posts"
     ordering = ["-date_posted"]
+
+DetailView
+class PostDetailView(DetailView):
+    model = Post

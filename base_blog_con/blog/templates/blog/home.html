@@ -20,7 +20,7 @@
                   </div>
                   <p class="border-bottom"></p>
                   <div class="bottom">
-                      <a href="" class="text-decoration-none"><h2>{{ post.title }}</h2></a>
+                      <a href="{% url 'blog-detail' post.id %}" class="text-decoration-none"><h2>{{ post.title }}</h2></a>
                       <p>{{ post.content }}</p>
                   </div>
                 </div>

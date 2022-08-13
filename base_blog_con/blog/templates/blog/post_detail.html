@@ -1,0 +1,44 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <!-- Content -->
+    <div class="row">
+        <!-- Card -->
+        
+            <div class="col-8">
+              <div class="row">
+                <div class="col-3 mb-5">
+                  <img src="{{ object.author.profile.image.url }}" alt="" class="img-fluid rounded-circle p-2 rounded mx-auto d-block">
+                </div>
+                <div class="col-9 mb-5">
+                  <div class="up d-flex align-items-center">
+                      <h6 class="text-center fs-2 py-2">{{ object.author }}</h6>
+                      <span class="text-muted ms-5">{{ object.date_posted }}</span>
+                  </div>
+                  <p class="border-bottom"></p>
+                  <div class="bottom">
+                      <a href="#" class="text-decoration-none"><h2>{{ object.title }}</h2></a>
+                      <p>{{ object.content }}</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+        <!-- Card End -->
+            
+
+         </div>   
+        
+    </div>
+    <!-- row end -->
+</div>
+</div>
+
+{% endblock content %}
+    
+
+
+
